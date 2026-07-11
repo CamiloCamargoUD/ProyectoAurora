@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 1000 1200"
+  role="img"
+  aria-label="Colombia minimalista"
+>
+  <defs>
+    <linearGradient id="countryFill" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.10" />
+      <stop offset="50%" stop-color="#5DA9FF" stop-opacity="0.16" />
+      <stop offset="100%" stop-color="#EC4899" stop-opacity="0.12" />
+    </linearGradient>
+
+    <linearGradient id="countryStroke" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#5DA9FF" />
+      <stop offset="50%" stop-color="#8B5CF6" />
+      <stop offset="100%" stop-color="#EC4899" />
+    </linearGradient>
+
+    <filter id="countryGlow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="7" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+
+  <path
+    d="
+      M475 80
+      L555 118
+      L612 168
+      L632 242
+      L666 314
+      L655 390
+      L612 456
+      L590 522
+      L540 595
+      L495 664
+      L445 734
+      L385 788
+      L336 762
+      L312 696
+      L280 640
+      L236 593
+      L245 520
+      L221 452
+      L198 390
+      L210 319
+      L190 248
+      L220 180
+      L276 126
+      L348 92
+      L408 72
+      Z
+    "
+    fill="url(#countryFill)"
+    stroke="url(#countryStroke)"
+    stroke-width="6"
+    stroke-linejoin="round"
+    filter="url(#countryGlow)"
+  />
+
+  <path
+    d="M285 235 C 345 270, 396 306, 448 350"
+    fill="none"
+    stroke="rgba(255,255,255,0.12)"
+    stroke-width="5"
+    stroke-linecap="round"
+  />
+  <path
+    d="M268 420 C 338 448, 392 485, 455 533"
+    fill="none"
+    stroke="rgba(255,255,255,0.10)"
+    stroke-width="5"
+    stroke-linecap="round"
+  />
+  <path
+    d="M350 585 C 391 538, 438 500, 502 452"
+    fill="none"
+    stroke="rgba(255,255,255,0.08)"
+    stroke-width="5"
+    stroke-linecap="round"
+  />
+</svg>

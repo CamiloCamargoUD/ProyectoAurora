@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#050816">
+    <title>Una pequeña historia...</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="background" aria-hidden="true">
+        <div id="stars"></div>
+        <div id="aurora"></div>
+    </div>
+
+    <header id="topBar">
+        <div id="progressContainer" aria-hidden="true">
+            <div id="progressBar"></div>
+        </div>
+
+        <button id="musicButton" type="button" aria-label="Activar o pausar música">🎵</button>
+    </header>
+
+    <main id="app" aria-live="polite"></main>
+
+    <footer id="signature">Hecho con ❤️ por Camilo</footer>
+
+    <audio id="backgroundMusic" loop preload="auto">
+        <source src="assents/music/el libro de la vida (te amo y más).mp3" type="audio/mpeg">
+    </audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
