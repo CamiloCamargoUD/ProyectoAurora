@@ -13,16 +13,16 @@
     return;
   }
 
-  const PHOTO_SLIDES = [
-    { src: "assents/images/foto2.PNG", caption: "Todavía recuerdo este momento...", hold: 3000 },
-    { src: "assents/images/foto1.PNG", caption: "Aquí empezó a sentirse todo más especial.", hold: 3000 },
-    { src: "assents/images/foto3.PNG", caption: "Cada recuerdo contigo vale muchísimo.", hold: 3000 },
-    { src: "assents/images/foto4.PNG", caption: "La distancia nunca pudo con nosotros.", hold: 3000 },
-    { src: "assents/images/foto5.PNG", caption: "Y sin darme cuenta, ya eras parte de mi historia.", hold: 3200 },
-    { src: "assents/images/foto6.PNG", caption: "Esto ya no era casualidad.", hold: 3000 },
-    { src: "assents/images/foto7.PNG", caption: "Era el comienzo de algo bonito.", hold: 3000 },
-    { src: "assents/images/foto8.PNG", caption: "Y cada vez lo tengo más claro.", hold: 3200 }
-  ];
+const PHOTO_SLIDES = [
+  { src: "assents/images/foto1.PNG", caption: "Aquí empezó a sentirse todo más especial.", hold: 3000 },
+  { src: "assents/images/foto2.PNG", caption: "Todavía recuerdo este momento...", hold: 3000 },
+  { src: "assents/images/foto3.PNG", caption: "Cada recuerdo contigo vale muchísimo.", hold: 3000 },
+  { src: "assents/images/foto4.PNG", caption: "La distancia nunca pudo con nosotros.", hold: 3000 },
+  { src: "assents/images/foto5.PNG", caption: "Y sin darme cuenta, ya eras parte de mi historia.", hold: 3200 },
+  { src: "assents/images/foto6.PNG", caption: "Esto ya no era casualidad.", hold: 3000 },
+  { src: "assents/images/foto7.PNG", caption: "Era el comienzo de algo bonito.", hold: 3000 },
+  { src: "assents/images/foto8.PNG", caption: "Y cada vez lo tengo más claro.", hold: 3200 }
+];
 
   const state = {
     currentScene: 0,
@@ -445,7 +445,7 @@
       if (runToken !== state.galleryRunToken) return;
 
       if (!loadedAtLeastOne) {
-        caption.textContent = "Agrega tus fotos en assets/images/foto1.jpg, foto2.jpg... para ver el carrusel.";
+        caption.textContent = "Agrega tus fotos en assents/images/foto1.PNG, foto2.PNG...para ver el carrusel.";
       } else {
         caption.textContent = "Y sin darme cuenta, ya eras parte de mi historia.";
       }
