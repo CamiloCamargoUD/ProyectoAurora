@@ -14,7 +14,7 @@
   }
 
   const PHOTO_SLIDES = [
-    { src: "assents/images/foto2.png", caption: "Todavía recuerdo este momento...", hold: 3000 },
+    { src: "assents/images/foto2.PNG", caption: "Todavía recuerdo este momento...", hold: 3000 },
     { src: "assets/images/foto1.png", caption: "Aquí empezó a sentirse todo más especial.", hold: 3000 },
     { src: "assents/images/foto3.png", caption: "Cada recuerdo contigo vale muchísimo.", hold: 3000 },
     { src: "assents/images/foto4.png", caption: "La distancia nunca pudo con nosotros.", hold: 3000 },
