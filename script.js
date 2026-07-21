@@ -458,130 +458,131 @@ const PHOTO_SLIDES = [
   }
 
   function sceneDistance() {
-    const scene = makeScene("distance-stage");
-
-    const title = document.createElement("h2");
-    title.textContent = "La distancia nunca pudo con lo que siento.";
-
-    const intro = document.createElement("p");
-    intro.className = "scene-text";
-    intro.textContent = "Bogotá e Ibagué están lejos en el mapa, pero muy cerca en todo lo que siento por ti.";
+    const scene = makeScene("poem-stage");
 
     const shell = document.createElement("div");
-    shell.className = "distance-shell";
+    shell.className = "poem-shell";
+    shell.style.maxWidth = "min(840px, 92vw)";
+    shell.style.width = "100%";
+    shell.style.padding = "34px 24px";
+    shell.style.borderRadius = "34px";
+    shell.style.border = "1px solid rgba(255,255,255,.12)";
+    shell.style.background = "linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.04))";
+    shell.style.backdropFilter = "blur(16px)";
+    shell.style.webkitBackdropFilter = "blur(16px)";
+    shell.style.boxShadow = "0 24px 80px rgba(0,0,0,.28)";
+    shell.style.position = "relative";
+    shell.style.overflow = "hidden";
 
-    shell.innerHTML = `
-      <svg class="distance-svg" viewBox="0 0 1000 1200" preserveAspectRatio="none" aria-hidden="true">
-        <defs>
-          <linearGradient id="routeGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%" stop-color="#5DA9FF"/>
-            <stop offset="50%" stop-color="#8B5CF6"/>
-            <stop offset="100%" stop-color="#EC4899"/>
-          </linearGradient>
-          <filter id="routeGlow" x="-50%" y="-50%" width="200%" height="200%">
-            <feGaussianBlur stdDeviation="5" result="blur"/>
-            <feMerge>
-              <feMergeNode in="blur"/>
-              <feMergeNode in="SourceGraphic"/>
-            </feMerge>
-          </filter>
-        </defs>
+    const glowA = document.createElement("div");
+    glowA.style.position = "absolute";
+    glowA.style.inset = "auto auto -120px -120px";
+    glowA.style.width = "320px";
+    glowA.style.height = "320px";
+    glowA.style.borderRadius = "50%";
+    glowA.style.background = "radial-gradient(circle, rgba(93,169,255,.16), transparent 70%)";
+    glowA.style.filter = "blur(40px)";
 
-        <path
-          class="country"
-          d="M475 80
-             L555 118
-             L612 168
-             L632 242
-             L666 314
-             L655 390
-             L612 456
-             L590 522
-             L540 595
-             L495 664
-             L445 734
-             L385 788
-             L336 762
-             L312 696
-             L280 640
-             L236 593
-             L245 520
-             L221 452
-             L198 390
-             L210 319
-             L190 248
-             L220 180
-             L276 126
-             L348 92
-             L408 72
-             Z"/>
-        <path class="route-path" id="routePath" d="M640 250 C600 315, 565 385, 530 430 S480 515, 462 548"/>
-        <circle class="city-dot" id="bogotaDot" cx="640" cy="250" r="13"></circle>
-        <circle class="city-dot city-dot--ibague" id="ibagueDot" cx="462" cy="548" r="13"></circle>
-        <text class="city-label" x="662" y="258">Bogotá</text>
-        <text class="city-label" x="484" y="556">Ibagué</text>
-      </svg>
+    const glowB = document.createElement("div");
+    glowB.style.position = "absolute";
+    glowB.style.inset = "-120px -120px auto auto";
+    glowB.style.width = "360px";
+    glowB.style.height = "360px";
+    glowB.style.borderRadius = "50%";
+    glowB.style.background = "radial-gradient(circle, rgba(236,72,153,.14), transparent 70%)";
+    glowB.style.filter = "blur(42px)";
 
-      <div class="map-plane" id="mapPlane">✈</div>
-      <div class="map-spark" id="mapSpark">✦</div>
-    `;
+    const preface = document.createElement("p");
+    preface.className = "scene-text";
+    preface.textContent = "Hay cosas que no entiende la distancia...";
 
-    const caption = document.createElement("p");
-    caption.className = "map-caption";
-    caption.innerHTML = "Una ruta pequeña en el mapa.<br><strong>Un sentimiento enorme en la vida real.</strong>";
+    const title = document.createElement("h2");
+    title.style.fontSize = "clamp(2rem, 4vw, 3rem)";
+    title.style.margin = "10px 0 8px";
+    title.style.lineHeight = "1.1";
+    title.textContent = "Entre ciudades y kilómetros,";
+
+    const poem = document.createElement("div");
+    poem.style.display = "grid";
+    poem.style.gap = "14px";
+    poem.style.margin = "26px auto 0";
+    poem.style.maxWidth = "620px";
+    poem.style.textAlign = "center";
+
+    const lines = [
+      "tu nombre siempre llega primero.",
+      "La distancia existe en el mapa,",
+      "pero no en lo que siento por ti.",
+      "Y aunque estemos lejos,",
+      "mi corazón ya encontró el camino."
+    ];
+
+    const lineEls = lines.map((line, index) => {
+      const p = document.createElement("p");
+      p.className = "scene-text";
+      p.textContent = line;
+      p.style.fontSize = index === 4 ? "1.08rem" : "1rem";
+      p.style.opacity = "0";
+      p.style.transform = "translateY(14px)";
+      p.style.transition = "opacity .7s ease, transform .7s ease";
+      poem.appendChild(p);
+      return p;
+    });
+
+    const accent = document.createElement("div");
+    accent.style.marginTop = "28px";
+    accent.style.height = "1px";
+    accent.style.width = "min(220px, 60%)";
+    accent.style.background = "linear-gradient(90deg, transparent, #5DA9FF, #EC4899, transparent)";
+    accent.style.opacity = ".85";
+
+    const footer = document.createElement("p");
+    footer.className = "scene-text";
+    footer.style.marginTop = "24px";
+    footer.style.maxWidth = "640px";
+    footer.style.opacity = "0";
+    footer.style.transform = "translateY(14px)";
+    footer.style.transition = "opacity .7s ease, transform .7s ease";
+    footer.textContent = "Cada kilómetro fue solo una excusa para demostrarte que lo nuestro siempre encontró la forma.";
 
     const button = makeButton("Continuar →");
-    button.classList.add("distance-button");
+    button.style.opacity = "0";
+    button.style.pointerEvents = "none";
+    button.style.marginTop = "26px";
     button.addEventListener("click", nextScene);
 
-    scene.append(title, intro, shell, caption, button);
-
-    const path = shell.querySelector("#routePath");
-    const plane = shell.querySelector("#mapPlane");
-    const spark = shell.querySelector("#mapSpark");
-    const ibagueDot = shell.querySelector("#ibagueDot");
+    shell.append(glowA, glowB, preface, title, poem, accent, footer, button);
+    scene.appendChild(shell);
 
     const runToken = ++state.distanceRunToken;
-    const totalLength = path.getTotalLength();
-    path.style.strokeDasharray = `${totalLength}`;
-    path.style.strokeDashoffset = `${totalLength}`;
 
-    const duration = 4200;
-    let start = 0;
-
-    const animate = (timestamp) => {
+    const reveal = async () => {
+      await wait(250);
       if (runToken !== state.distanceRunToken) return;
-      if (!start) start = timestamp;
 
-      const progress = Math.min((timestamp - start) / duration, 1);
-      const point = path.getPointAtLength(totalLength * progress);
-      const nextPoint = path.getPointAtLength(Math.min(totalLength * progress + 1, totalLength));
-      const angle = Math.atan2(nextPoint.y - point.y, nextPoint.x - point.x) * 180 / Math.PI;
-
-      path.style.strokeDashoffset = `${totalLength * (1 - progress)}`;
-
-      plane.style.opacity = progress > 0.05 ? "1" : "0";
-      plane.style.left = `${(point.x / 1000) * 100}%`;
-      plane.style.top = `${(point.y / 1200) * 100}%`;
-      plane.style.transform = `translate(-50%, -50%) rotate(${angle}deg)`;
-
-      spark.style.opacity = progress > 0.9 ? `${(progress - 0.9) * 10}` : "0";
-      spark.style.left = `${((point.x + 24) / 1000) * 100}%`;
-      spark.style.top = `${((point.y - 14) / 1200) * 100}%`;
-
-      if (progress < 1) {
-        requestAnimationFrame(animate);
-      } else {
-        ibagueDot.classList.add("pulse-end");
+      const timings = [0, 700, 1400, 2100, 2850];
+      lineEls.forEach((el, i) => {
         setTimeout(() => {
-          button.style.opacity = "1";
-          button.style.pointerEvents = "auto";
-          caption.innerHTML = "Bogotá → Ibagué<br><strong>La distancia no pudo con lo que siento.</strong>";
-        }, 280);
-      }
+          if (runToken !== state.distanceRunToken) return;
+          el.style.opacity = "1";
+          el.style.transform = "translateY(0)";
+        }, timings[i]);
+      });
+
+      setTimeout(() => {
+        if (runToken !== state.distanceRunToken) return;
+        footer.style.opacity = "1";
+        footer.style.transform = "translateY(0)";
+      }, 3400);
+
+      setTimeout(() => {
+        if (runToken !== state.distanceRunToken) return;
+        button.style.opacity = "1";
+        button.style.pointerEvents = "auto";
+      }, 4200);
     };
 
-    requestAnimationFrame(animate);
+    reveal();
     return scene;
   }
 
@@ -693,5 +694,7 @@ const PHOTO_SLIDES = [
 
   createStars(240);
   initAuroraMotion();
+  showScene(0);
+})();
   showScene(0);
 })();
