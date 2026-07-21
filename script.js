@@ -19,9 +19,7 @@
     { src: "assents/images/foto3.PNG", caption: "Cada recuerdo contigo vale muchísimo.", hold: 3000 }
     { src: "assents/images/foto4.PNG", caption: "La distancia nunca pudo con nosotros.", hold: 3000 },
     { src: "assents/images/foto5.PNG", caption: "Y sin darme cuenta, ya eras parte de mi historia.", hold: 3200 },
-    { src: "assents/images/foto6.PNG", caption: "Esto ya no era casualidad.", hold: 3000 },
-    { src: "assents/images/foto7.PNG", caption: "Era el comienzo de algo bonito.", hold: 3000 },
-    { src: "assents/images/foto8.PNG", caption: "Y cada vez lo tengo más claro.", hold: 3200 }
+    { src: "assents/images/foto6.PNG", caption: "Esto ya no era casualidad.", hold: 3000 }
   ];
 
   const state = {
