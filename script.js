@@ -457,134 +457,114 @@ const PHOTO_SLIDES = [
     return scene;
   }
 
+
   function sceneDistance() {
     const scene = makeScene("poem-stage");
 
-    const shell = document.createElement("div");
-    shell.className = "poem-shell";
-    shell.style.maxWidth = "min(840px, 92vw)";
-    shell.style.width = "100%";
-    shell.style.padding = "34px 24px";
-    shell.style.borderRadius = "34px";
-    shell.style.border = "1px solid rgba(255,255,255,.12)";
-    shell.style.background = "linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.04))";
-    shell.style.backdropFilter = "blur(16px)";
-    shell.style.webkitBackdropFilter = "blur(16px)";
-    shell.style.boxShadow = "0 24px 80px rgba(0,0,0,.28)";
-    shell.style.position = "relative";
-    shell.style.overflow = "hidden";
-
-    const glowA = document.createElement("div");
-    glowA.style.position = "absolute";
-    glowA.style.inset = "auto auto -120px -120px";
-    glowA.style.width = "320px";
-    glowA.style.height = "320px";
-    glowA.style.borderRadius = "50%";
-    glowA.style.background = "radial-gradient(circle, rgba(93,169,255,.16), transparent 70%)";
-    glowA.style.filter = "blur(40px)";
-
-    const glowB = document.createElement("div");
-    glowB.style.position = "absolute";
-    glowB.style.inset = "-120px -120px auto auto";
-    glowB.style.width = "360px";
-    glowB.style.height = "360px";
-    glowB.style.borderRadius = "50%";
-    glowB.style.background = "radial-gradient(circle, rgba(236,72,153,.14), transparent 70%)";
-    glowB.style.filter = "blur(42px)";
-
-    const preface = document.createElement("p");
-    preface.className = "scene-text";
-    preface.textContent = "Hay cosas que no entiende la distancia...";
-
     const title = document.createElement("h2");
-    title.style.fontSize = "clamp(2rem, 4vw, 3rem)";
-    title.style.margin = "10px 0 8px";
-    title.style.lineHeight = "1.1";
-    title.textContent = "Entre ciudades y kilómetros,";
+    title.textContent = "La distancia no pudo con lo que siento.";
 
-    const poem = document.createElement("div");
-    poem.style.display = "grid";
-    poem.style.gap = "14px";
-    poem.style.margin = "26px auto 0";
-    poem.style.maxWidth = "620px";
-    poem.style.textAlign = "center";
+    const intro = document.createElement("p");
+    intro.className = "scene-text";
+    intro.textContent = "Entre Bogotá e Ibagué hubo kilómetros... pero nunca silencio en lo que siento por ti.";
 
-    const lines = [
-      "tu nombre siempre llega primero.",
-      "La distancia existe en el mapa,",
-      "pero no en lo que siento por ti.",
-      "Y aunque estemos lejos,",
-      "mi corazón ya encontró el camino."
+    const poemWrap = document.createElement("div");
+    poemWrap.style.width = "min(760px, 92vw)";
+    poemWrap.style.marginTop = "18px";
+    poemWrap.style.padding = "34px 28px";
+    poemWrap.style.borderRadius = "28px";
+    poemWrap.style.border = "1px solid rgba(255,255,255,.12)";
+    poemWrap.style.background = "linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.04))";
+    poemWrap.style.backdropFilter = "blur(18px)";
+    poemWrap.style.webkitBackdropFilter = "blur(18px)";
+    poemWrap.style.boxShadow = "0 20px 60px rgba(0,0,0,.28)";
+    poemWrap.style.textAlign = "left";
+    poemWrap.style.position = "relative";
+    poemWrap.style.overflow = "hidden";
+
+    const glow = document.createElement("div");
+    glow.style.position = "absolute";
+    glow.style.inset = "0";
+    glow.style.background = "radial-gradient(circle at 50% 40%, rgba(236,72,153,.12), transparent 35%), radial-gradient(circle at 50% 70%, rgba(93,169,255,.10), transparent 40%)";
+    glow.style.pointerEvents = "none";
+    poemWrap.appendChild(glow);
+
+    const label = document.createElement("div");
+    label.textContent = "Un poema para ti";
+    label.style.position = "relative";
+    label.style.zIndex = "1";
+    label.style.textTransform = "uppercase";
+    label.style.letterSpacing = "4px";
+    label.style.fontSize = ".78rem";
+    label.style.color = "rgba(255,255,255,.72)";
+    label.style.marginBottom = "18px";
+    poemWrap.appendChild(label);
+
+    const poemLines = [
+      "No fueron los kilómetros",
+      "los que escribieron esta historia.",
+      "Fueron las ganas de encontrarte,",
+      "de pensarte y de quedarme aquí.",
+      "Porque el amor verdadero no mide distancia;",
+      "solo encuentra el camino."
     ];
 
-    const lineEls = lines.map((line, index) => {
+    const lineNodes = [];
+    poemLines.forEach((line, index) => {
       const p = document.createElement("p");
-      p.className = "scene-text";
       p.textContent = line;
-      p.style.fontSize = index === 4 ? "1.08rem" : "1rem";
+      p.style.position = "relative";
+      p.style.zIndex = "1";
+      p.style.margin = index === poemLines.length - 1 ? "0" : "0 0 10px";
+      p.style.fontSize = index === poemLines.length - 1 ? "1.25rem" : "clamp(1.05rem, 1.8vw, 1.25rem)";
+      p.style.lineHeight = "1.8";
+      p.style.color = index === poemLines.length - 1 ? "#ffffff" : "#d8dcef";
+      p.style.fontWeight = index === poemLines.length - 1 ? "700" : "500";
       p.style.opacity = "0";
-      p.style.transform = "translateY(14px)";
-      p.style.transition = "opacity .7s ease, transform .7s ease";
-      poem.appendChild(p);
-      return p;
+      p.style.transform = "translateY(10px)";
+      p.style.transition = "opacity .6s ease, transform .6s ease";
+      poemWrap.appendChild(p);
+      lineNodes.push(p);
     });
 
-    const accent = document.createElement("div");
-    accent.style.marginTop = "28px";
-    accent.style.height = "1px";
-    accent.style.width = "min(220px, 60%)";
-    accent.style.background = "linear-gradient(90deg, transparent, #5DA9FF, #EC4899, transparent)";
-    accent.style.opacity = ".85";
-
-    const footer = document.createElement("p");
-    footer.className = "scene-text";
-    footer.style.marginTop = "24px";
-    footer.style.maxWidth = "640px";
-    footer.style.opacity = "0";
-    footer.style.transform = "translateY(14px)";
-    footer.style.transition = "opacity .7s ease, transform .7s ease";
-    footer.textContent = "Cada kilómetro fue solo una excusa para demostrarte que lo nuestro siempre encontró la forma.";
+    const sign = document.createElement("div");
+    sign.textContent = "— una pequeña historia";
+    sign.style.position = "relative";
+    sign.style.zIndex = "1";
+    sign.style.marginTop = "24px";
+    sign.style.fontSize = ".95rem";
+    sign.style.color = "rgba(255,255,255,.65)";
+    poemWrap.appendChild(sign);
 
     const button = makeButton("Continuar →");
+    button.classList.add("distance-button");
     button.style.opacity = "0";
     button.style.pointerEvents = "none";
-    button.style.marginTop = "26px";
+    button.style.marginTop = "16px";
     button.addEventListener("click", nextScene);
 
-    shell.append(glowA, glowB, preface, title, poem, accent, footer, button);
-    scene.appendChild(shell);
+    scene.append(title, intro, poemWrap, button);
 
     const runToken = ++state.distanceRunToken;
 
     const reveal = async () => {
-      await wait(250);
+      for (let i = 0; i < lineNodes.length; i++) {
+        if (runToken !== state.distanceRunToken) return;
+        await wait(420);
+        lineNodes[i].style.opacity = "1";
+        lineNodes[i].style.transform = "translateY(0)";
+      }
+
       if (runToken !== state.distanceRunToken) return;
-
-      const timings = [0, 700, 1400, 2100, 2850];
-      lineEls.forEach((el, i) => {
-        setTimeout(() => {
-          if (runToken !== state.distanceRunToken) return;
-          el.style.opacity = "1";
-          el.style.transform = "translateY(0)";
-        }, timings[i]);
-      });
-
-      setTimeout(() => {
-        if (runToken !== state.distanceRunToken) return;
-        footer.style.opacity = "1";
-        footer.style.transform = "translateY(0)";
-      }, 3400);
-
-      setTimeout(() => {
-        if (runToken !== state.distanceRunToken) return;
-        button.style.opacity = "1";
-        button.style.pointerEvents = "auto";
-      }, 4200);
+      await wait(500);
+      button.style.opacity = "1";
+      button.style.pointerEvents = "auto";
     };
 
     reveal();
     return scene;
   }
+
 
   function sceneFinalQuestion() {
     const scene = makeScene("final-stage");
@@ -694,7 +674,5 @@ const PHOTO_SLIDES = [
 
   createStars(240);
   initAuroraMotion();
-  showScene(0);
-})();
   showScene(0);
 })();
