@@ -16,7 +16,7 @@
   const PHOTO_SLIDES = [
     { src: "assents/images/foto1.PNG", caption: "Aquí empezó a sentirse todo más especial.", hold: 3000 },
     { src: "assents/images/foto2.PNG", caption: "Todavía recuerdo este momento...", hold: 3000 },
-    { src: "assents/images/foto3.PNG", caption: "Cada recuerdo contigo vale muchísimo.", hold: 3000 }
+    { src: "assents/images/foto3.PNG", caption: "Cada recuerdo contigo vale muchísimo.", hold: 3000 },
     { src: "assents/images/foto4.PNG", caption: "La distancia nunca pudo con nosotros.", hold: 3000 },
     { src: "assents/images/foto5.PNG", caption: "Y sin darme cuenta, ya eras parte de mi historia.", hold: 3200 },
     { src: "assents/images/foto6.PNG", caption: "Esto ya no era casualidad.", hold: 3000 }
@@ -463,7 +463,7 @@
 
     const intro = document.createElement("p");
     intro.className = "scene-text";
-    intro.textContent = "Entre Nuestros hogares hay miles de kilómetros... pero nunca silencio en lo que siento por ti.";
+    intro.textContent = "Entre nuestros hogares hay miles de kilómetros... pero nunca silencio en lo que siento por ti.";
 
     const poemWrap = document.createElement("div");
     poemWrap.style.width = "min(760px, 92vw)";
@@ -570,7 +570,7 @@
 
     layout.innerHTML = `
       <div class="final-preface">Después de todo este camino...</div>
-      <h2 class="final-title">Todo esto tenía un solo motivo.</h2>
+      <h2 class="final-title">Todo esto tenía un motivo.</h2>
       <div class="final-heart">❤️</div>
       <h1 class="final-question">Sofia...<br>¿Quieres ser mi novia?</h1>
     `;
@@ -579,7 +579,7 @@
     actions.className = "final-actions";
 
     const yesButton = makeButton("Sí, quiero ❤️", "final-primary");
-    const againButton = makeButton("Leer otra vez la historia, y tomarnos nuestro tiempo", "final-secondary");
+    const againButton = makeButton("Leer otra vez la historia", "final-secondary");
 
     actions.append(yesButton, againButton);
     layout.appendChild(actions);
