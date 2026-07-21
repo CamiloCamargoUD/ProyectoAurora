@@ -570,7 +570,7 @@
 
     layout.innerHTML = `
       <div class="final-preface">Después de todo este camino...</div>
-      <h2 class="final-title">Todo esto tenía un motivo.</h2>
+      <h2 class="final-title">Todo esto tenía un solo motivo.</h2>
       <div class="final-heart">❤️</div>
       <h1 class="final-question">Sofia...<br>¿Quieres ser mi novia?</h1>
     `;
