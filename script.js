@@ -579,7 +579,7 @@
     actions.className = "final-actions";
 
     const yesButton = makeButton("Sí, quiero ❤️", "final-primary");
-    const againButton = makeButton("Leer otra vez la historia", "final-secondary");
+    const againButton = makeButton("Leer otra vez la historia, y tomarnos nuestro tiempo...", "final-secondary");
 
     actions.append(yesButton, againButton);
     layout.appendChild(actions);
