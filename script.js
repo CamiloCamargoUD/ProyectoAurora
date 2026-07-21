@@ -16,12 +16,7 @@
   const PHOTO_SLIDES = [
     { src: "assents/images/foto1.PNG", caption: "Aquí empezó a sentirse todo más especial.", hold: 3000 },
     { src: "assents/images/foto2.PNG", caption: "Todavía recuerdo este momento...", hold: 3000 },
-    { src: "assents/images/foto3.PNG", caption: "Cada recuerdo contigo vale muchísimo.", hold: 3000 },
-    { src: "assents/images/foto4.PNG", caption: "La distancia nunca pudo con nosotros.", hold: 3000 },
-    { src: "assents/images/foto5.PNG", caption: "Y sin darme cuenta, ya eras parte de mi historia.", hold: 3200 },
-    { src: "assents/images/foto6.PNG", caption: "Esto ya no era casualidad.", hold: 3000 },
-    { src: "assents/images/foto7.PNG", caption: "Era el comienzo de algo bonito.", hold: 3000 },
-    { src: "assents/images/foto8.PNG", caption: "Y cada vez lo tengo más claro.", hold: 3200 }
+    { src: "assents/images/foto3.PNG", caption: "Cada recuerdo contigo vale muchísimo.", hold: 3000 }
   ];
 
   const state = {
@@ -465,7 +460,7 @@
 
     const intro = document.createElement("p");
     intro.className = "scene-text";
-    intro.textContent = "Entre Bogotá e Ibagué hubo kilómetros... pero nunca silencio en lo que siento por ti.";
+    intro.textContent = "Entre Nuestros hogares hay miles de kilómetros... pero nunca silencio en lo que siento por ti.";
 
     const poemWrap = document.createElement("div");
     poemWrap.style.width = "min(760px, 92vw)";
